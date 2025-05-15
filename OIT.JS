@@ -1,3 +1,9 @@
+//saludo al inresar al sitiio 
+function mostrarSaludo() {
+    alert('Hola, venía a recomendarte One Piece');
+}
+mostrarSaludo();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Selecciona todos los cubos
     document.querySelectorAll('.cont-hijo').forEach(function(cube) {
