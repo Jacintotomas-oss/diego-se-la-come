@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="OIT.js"></script>
-    <title>Document</title>
+    <title>Herramientas Digitales para la Educación</title>
     <style>
         /* Fondo del body */
         body {
             background-color: #f0e6d2;
-            background-image: url("../static/img/image.png");
+            background-image: url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
             background-size: cover;
             background-position: center;
             background-blend-mode: multiply;
             background-attachment: fixed;
             min-height: 100vh;
             display: flex;
-            flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-            justify-content: flex-start; /* Alinea los elementos al inicio */
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
             margin: 0;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
-            font-family: Arial, sans-serif; /* Aplica Arial a todo el texto */
+            font-family: Arial, sans-serif;
         }
         /* Estilo del título */
         h1 {
@@ -32,6 +31,9 @@
             text-align: center;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
         }
         /* Fila de cubos */
         .cubes-row {
@@ -39,9 +41,9 @@
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
-            gap: 1.5em; /* Espacio horizontal entre cubos */
+            gap: 1.5em;
             margin-top: 40px;
-            flex-wrap: wrap; /* Permite que los cubos bajen si no caben */
+            flex-wrap: wrap;
         }
         .container {
             margin: 0;
@@ -58,7 +60,7 @@
             perspective: 1000px;
             transform-origin: center;
             cursor: pointer;
-            margin-top: 140px;
+            margin-top: 20px;
         }
         .cont-hijo{
             height: 200px;
@@ -71,11 +73,17 @@
             height: 100%;
             width: 100%;
             background: #fff;
-            display: grid;
+            display: flex;
             justify-content: center;
             align-items: center;
             font-size: 4em;
             color: #fff;
+            border: 2px solid #ddd;
+            box-sizing: border-box;
+        }
+        .lado img {
+            max-width: 80%;
+            max-height: 80%;
         }
         .cont-hijo:hover{
             transform: rotateX(360deg) rotateY(540deg);
@@ -84,40 +92,73 @@
             color: #fff;
         }
         .frente{
-            transform: rotateY(0deg) translateZ(100px)
+            transform: rotateY(0deg) translateZ(100px);
+            background-color: #f8f8f8;
         }
         .atras{
             transform: rotateY(180deg) translateZ(100px)
         }
         .derecha{
-            transform: rotateY(90deg) translateZ(100px)
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: #f8f8f8;
         }
         .izquierda{
-            transform: rotateY(-90deg) translateZ(100px)
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color: #f8f8f8;
         }
         .arriba{
-            transform: rotateX(90deg) translateZ(100px)
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: #f8f8f8;
         }
         .abajo{
-            transform: rotateX(-90deg) translateZ(100px)
+            transform: rotateX(-90deg) translateZ(100px);
+            background-color: #f8f8f8;
         }
-        .cube-youtube .atras{
-            background:#ff0000;
-            transition-delay: .5;
+        
+        /* Colores para el lado trasero de cada cubo */
+        .cube-classroom .atras { background: #ffffff; }
+        .cube-windows .atras { background: #ffffff; }
+        .cube-github .atras { background: #ffffff; }
+        .cube-moodle .atras { background: #ffffff; }
+        .cube-google .atras { background: #ffffff; }
+        .cube-vscode .atras { background: #ffffff; }
+        .cube-visualstudio .atras { background: #ffffff; }
+        .cube-microsoftoffice .atras { background: #ffffff; }
+        .cube-googledrive .atras { background: #ffffff; }
+        .cube-meet .atras { background: #ffffff; }
+        
+        .text-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .cube-facebook .atras{
-            background:#3b5998;
-            transition-delay: .5;
+        
+        .text-container p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
         }
-        .cube-twitter .atras{
-            background:#0084b4;
-            transition-delay: .5;
+        
+        .tool-name {
+            position: absolute;
+            bottom: -30px;
+            font-weight: bold;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <h1>Herramientas Digitales Para la Educacion</h1> 
-    <div class="container">
+    <h1>Herramientas Digitales Para la Educación</h1> 
+    <div class="text-container">
         <p>En esta sección se presentan herramientas digitales que pueden ser utilizadas en el ámbito educativo. Estas herramientas están diseñadas para facilitar el aprendizaje y la enseñanza, y pueden ser utilizadas por estudiantes y docentes.</p>
         <p>Las herramientas digitales son recursos tecnológicos que permiten mejorar la calidad de la educación y hacerla más accesible. Estas herramientas pueden incluir aplicaciones, plataformas en línea, software educativo, entre otros.</p>
     </div>
@@ -125,114 +166,164 @@
     <div class="cubes-row">
         <!-- Classroom -->
         <div class="container">
-            <div class="cont-hijo cube-classroom">
-                <div class="lado frente"><i class="ca ca-classroom"></i></div>
-                <div class="lado atras"><i class="ca ca-classroom"></i></div>
-                <div class="lado izquierda"><i class="ca ca-classroom"></i></div>
-                <div class="lado derecha"><i class="ca ca-classroom"></i></div>
-                <div class="lado arriba"><i class="ca ca-classroom"></i></div>
-                <div class="lado abajo"><i class="ca ca-classroom"></i></div>
+            <div class="cont-hijo cube-classroom"
+                data-title="Google Classroom"
+                data-desc="Google Classroom es una plataforma de gestión de aprendizaje que permite a los educadores crear, distribuir y calificar tareas de manera eficiente. Facilita la comunicación entre profesores y estudiantes, y organiza el contenido del curso.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Google_Classroom_Logo.png/240px-Google_Classroom_Logo.png" alt="Google Classroom"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Google_Classroom_Logo.png/240px-Google_Classroom_Logo.png" alt="Google Classroom"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Google_Classroom_Logo.png/240px-Google_Classroom_Logo.png" alt="Google Classroom"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Google_Classroom_Logo.png/240px-Google_Classroom_Logo.png" alt="Google Classroom"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Google_Classroom_Logo.png/240px-Google_Classroom_Logo.png" alt="Google Classroom"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Google_Classroom_Logo.png/240px-Google_Classroom_Logo.png" alt="Google Classroom"></div>
             </div>
+            <div class="tool-name">Google Classroom</div>
         </div>
+        
         <!-- Windows -->
         <div class="container">
-            <div class="cont-hijo cube-windows">
-                <div class="lado frente"><i class="ca ca-windows"></i></div>
-                <div class="lado atras"><i class="ca ca-windows"></i></div>
-                <div class="lado izquierda"><i class="ca ca-windows"></i></div>
-                <div class="lado derecha"><i class="ca ca-windows"></i></div>
-                <div class="lado arriba"><i class="ca ca-windows"></i></div>
-                <div class="lado abajo"><i class="ca ca-windows"></i></div>
+            <div class="cont-hijo cube-windows"
+             data-title="Windows"
+             data-desc="Windows es un sistema operativo desarrollado por Microsoft, ampliamente utilizado en computadoras personales y entornos educativos para ejecutar aplicaciones y gestionar recursos del sistema.">
+            <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/240px-Windows_logo_-_2021.svg.png" alt="Windows"></div>
+            <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/240px-Windows_logo_-_2021.svg.png" alt="Windows"></div>
+            <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/240px-Windows_logo_-_2021.svg.png" alt="Windows"></div>
+            <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/240px-Windows_logo_-_2021.svg.png" alt="Windows"></div>
+            <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/240px-Windows_logo_-_2021.svg.png" alt="Windows"></div>
+            <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/240px-Windows_logo_-_2021.svg.png" alt="Windows"></div>
             </div>
+            <div class="tool-name">Windows</div>
         </div>
+        
         <!-- Github -->
         <div class="container">
-            <div class="cont-hijo cube-github">
-                <div class="lado frente"><i class="ca ca-github"></i></div>
-                <div class="lado atras"><i class="ca ca-github"></i></div>
-                <div class="lado izquierda"><i class="ca ca-github"></i></div>
-                <div class="lado derecha"><i class="ca ca-github"></i></div>
-                <div class="lado arriba"><i class="ca ca-github"></i></div>
-                <div class="lado abajo"><i class="ca ca-github"></i></div>
+            <div class="cont-hijo cube-github"
+                 data-title="GitHub"
+                 data-desc="GitHub es una plataforma para alojar código, colaborar en proyectos y controlar versiones usando Git. Es ampliamente utilizada por desarrolladores para trabajar en equipo y compartir proyectos de software.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png" alt="GitHub"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png" alt="GitHub"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png" alt="GitHub"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png" alt="GitHub"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png" alt="GitHub"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png" alt="GitHub"></div>
             </div>
+            <div class="tool-name">GitHub</div>
         </div>
+        
         <!-- Moodle -->
         <div class="container">
-            <div class="cont-hijo cube-moodle">
-                <div class="lado frente"><i class="ca ca-moodle"></i></div>
-                <div class="lado atras"><i class="ca ca-moodle"></i></div>
-                <div class="lado izquierda"><i class="ca ca-moodle"></i></div>
-                <div class="lado derecha"><i class="ca ca-moodle"></i></div>
-                <div class="lado arriba"><i class="ca ca-moodle"></i></div>
-                <div class="lado abajo"><i class="ca ca-moodle"></i></div>
+            <div class="cont-hijo cube-moodle"
+                data-title="Moodle"
+                data-desc="Moodle es una plataforma de gestión de aprendizaje (LMS) de código abierto que permite a educadores y estudiantes crear y gestionar cursos en línea. Facilita la enseñanza y el aprendizaje a través de herramientas interactivas.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/240px-Moodle-logo.svg.png" alt="Moodle"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/240px-Moodle-logo.svg.png" alt="Moodle"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/240px-Moodle-logo.svg.png" alt="Moodle"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/240px-Moodle-logo.svg.png" alt="Moodle"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/240px-Moodle-logo.svg.png" alt="Moodle"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/240px-Moodle-logo.svg.png" alt="Moodle"></div>
             </div>
+            <div class="tool-name">Moodle</div>
         </div>
+        
         <!-- Google -->
         <div class="container">
-            <div class="cont-hijo cube-google">
-                <div class="lado frente"><i class="ca ca-google"></i></div>
-                <div class="lado atras"><i class="ca ca-google"></i></div>
-                <div class="lado izquierda"><i class="ca ca-google"></i></div>
-                <div class="lado derecha"><i class="ca ca-google"></i></div>
-                <div class="lado arriba"><i class="ca ca-google"></i></div>
-                <div class="lado abajo"><i class="ca ca-google"></i></div>
+            <div class="cont-hijo cube-google"
+                data-title="Google"
+                data-desc="Google es un motor de búsqueda y una plataforma tecnológica que ofrece una variedad de servicios, incluyendo correo electrónico (Gmail), almacenamiento en la nube (Google Drive) y herramientas de productividad (Google Docs, Sheets, Slides).">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/240px-Google_2015_logo.svg.png" alt="Google"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/240px-Google_2015_logo.svg.png" alt="Google"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/240px-Google_2015_logo.svg.png" alt="Google"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/240px-Google_2015_logo.svg.png" alt="Google"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/240px-Google_2015_logo.svg.png" alt="Google"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/240px-Google_2015_logo.svg.png" alt="Google"></div>
             </div>
+            <div class="tool-name">Google</div>
         </div>
+        
         <!-- Visual Studio Code -->
         <div class="container">
-            <div class="cont-hijo cube-vscode">
-                <div class="lado frente"><i class="ca ca-vscode"></i></div>
-                <div class="lado atras"><i class="ca ca-vscode"></i></div>
-                <div class="lado izquierda"><i class="ca ca-vscode"></i></div>
-                <div class="lado derecha"><i class="ca ca-vscode"></i></div>
-                <div class="lado arriba"><i class="ca ca-vscode"></i></div>
-                <div class="lado abajo"><i class="ca ca-vscode"></i></div>
+            <div class="cont-hijo cube-vscode"
+                data-title="Visual Studio Code"
+                data-desc="Visual Studio Code es un editor de código fuente desarrollado por Microsoft. Es ligero y potente, con soporte para depuración, control de versiones y una amplia gama de extensiones para diferentes lenguajes de programación.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code"></div>
             </div>
+            <div class="tool-name">VS Code</div>
         </div>
+        
         <!-- Visual Studio -->
         <div class="container">
-            <div class="cont-hijo cube-visualstudio">
-                <div class="lado frente"><i class="ca ca-visualstudio"></i></div>
-                <div class="lado atras"><i class="ca ca-visualstudio"></i></div>
-                <div class="lado izquierda"><i class="ca ca-visualstudio"></i></div>
-                <div class="lado derecha"><i class="ca ca-visualstudio"></i></div>
-                <div class="lado arriba"><i class="ca ca-visualstudio"></i></div>
-                <div class="lado abajo"><i class="ca ca-visualstudio"></i></div>
+            <div class="cont-hijo cube-visualstudio"
+                data-title="Visual Studio"
+                data-desc="Visual Studio es un entorno de desarrollo integrado (IDE) de Microsoft. Proporciona herramientas para desarrollar aplicaciones en diferentes lenguajes de programación, incluyendo C#, VB.NET y C++. Es ampliamente utilizado para el desarrollo de software profesional.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/240px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/240px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/240px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/240px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/240px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/240px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio"></div>
             </div>
+            <div class="tool-name">Visual Studio</div>
         </div>
+        
         <!-- Microsoft Office -->
         <div class="container">
-            <div class="cont-hijo cube-microsoftoffice">
-                <div class="lado frente"><i class="ca ca-microsoftoffice"></i></div>
-                <div class="lado atras"><i class="ca ca-microsoftoffice"></i></div>
-                <div class="lado izquierda"><i class="ca ca-microsoftoffice"></i></div>
-                <div class="lado derecha"><i class="ca ca-microsoftoffice"></i></div>
-                <div class="lado arriba"><i class="ca ca-microsoftoffice"></i></div>
-                <div class="lado abajo"><i class="ca ca-microsoftoffice"></i></div>
+            <div class="cont-hijo cube-microsoftoffice"
+                data-title="Microsoft Office"
+                data-desc="Microsoft Office es un conjunto de aplicaciones de productividad que incluye Word, Excel, PowerPoint y Outlook. Estas herramientas son ampliamente utilizadas en entornos educativos y empresariales para crear documentos, hojas de cálculo y presentaciones.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/240px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/240px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/240px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/240px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/240px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/240px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office"></div>
             </div>
+            <div class="tool-name">Microsoft Office</div>
         </div>
+        
         <!-- Google Drive -->
         <div class="container">
-            <div class="cont-hijo cube-googledrive">
-                <div class="lado frente"><i class="ca ca-googledrive"></i></div>
-                <div class="lado atras"><i class="ca ca-googledrive"></i></div>
-                <div class="lado izquierda"><i class="ca ca-googledrive"></i></div>
-                <div class="lado derecha"><i class="ca ca-googledrive"></i></div>
-                <div class="lado arriba"><i class="ca ca-googledrive"></i></div>
-                <div class="lado abajo"><i class="ca ca-googledrive"></i></div>
+            <div class="cont-hijo cube-googledrive"
+                data-title="Google Drive"
+                data-desc="Google Drive es un servicio de almacenamiento en la nube que permite a los usuarios guardar y compartir archivos. Ofrece integración con otras herramientas de Google, como Google Docs, Sheets y Slides, facilitando la colaboración en línea.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/240px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/240px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/240px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/240px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/240px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/240px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive"></div>
             </div>
+            <div class="tool-name">Google Drive</div>
         </div>
+        
         <!-- Meet -->
         <div class="container">
-            <div class="cont-hijo cube-meet">
-                <div class="lado frente"><i class="ca ca-meet"></i></div>
-                <div class="lado atras"><i class="ca ca-meet"></i></div>
-                <div class="lado izquierda"><i class="ca ca-meet"></i></div>
-                <div class="lado derecha"><i class="ca ca-meet"></i></div>
-                <div class="lado arriba"><i class="ca ca-meet"></i></div>
-                <div class="lado abajo"><i class="ca ca-meet"></i></div>
+            <div class="cont-hijo cube-meet"
+                data-title="Google Meet"
+                data-desc="Google Meet es una plataforma de videoconferencia que permite a los usuarios realizar reuniones en línea. Es parte de Google Workspace y ofrece funciones como compartir pantalla, grabación de reuniones y chat en tiempo real.">
+                <div class="lado frente"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/240px-Google_Meet_icon_%282020%29.svg.png" alt="Google Meet"></div>
+                <div class="lado atras"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/240px-Google_Meet_icon_%282020%29.svg.png" alt="Google Meet"></div>
+                <div class="lado izquierda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/240px-Google_Meet_icon_%282020%29.svg.png" alt="Google Meet"></div>
+                <div class="lado derecha"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/240px-Google_Meet_icon_%282020%29.svg.png" alt="Google Meet"></div>
+                <div class="lado arriba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/240px-Google_Meet_icon_%282020%29.svg.png" alt="Google Meet"></div>
+                <div class="lado abajo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/240px-Google_Meet_icon_%282020%29.svg.png" alt="Google Meet"></div>
             </div>
+            <div class="tool-name">Google Meet</div>
         </div>
     </div>
+
+    <!-- Modal para mostrar información de la herramienta -->
+    <div id="toolModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+      <div style="background:#fff; padding:30px 20px 20px 20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+        <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.5em;">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+
+    <script src="OIT.JS"></script>
 </body>
 </html>
