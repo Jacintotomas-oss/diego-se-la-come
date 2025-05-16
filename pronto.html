@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            /* Fondo con superposición oscura para mayor formalidad */
+            background-image:
+                linear-gradient(rgba(30,30,30,0.4), rgba(30,30,30,0.4)),
+                url('city.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .mensaje {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.92);
+            padding: 2rem 3rem;
+            border-radius: 14px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+            z-index: 2;
+            font-size: 1.3rem;
+            text-align: center;
+            color: #222;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        Este apartado todavía está en desarrollo.<br>
+        Te avisaremos cuando esté listo.
+    </div>
+   
+</body>
+</html>
